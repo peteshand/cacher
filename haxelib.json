@@ -1,0 +1,11 @@
+{
+	"name": "cacher",
+	"url": "https://github.com/peteshand/color",
+	"license": "MIT",
+	"tags": ["cache"],
+	"description": "lib to help cache data locally",
+	"version": "1.0.0",
+	"releasenote": "initial release",
+	"contributors": [ "p.j.shand" ],
+	"classPath": "src/"
+}
