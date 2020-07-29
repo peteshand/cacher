@@ -4,8 +4,8 @@
 	"license": "MIT",
 	"tags": ["cache"],
 	"description": "lib to help cache data locally",
-	"version": "1.0.0",
-	"releasenote": "initial release",
+	"version": "1.0.3",
+	"releasenote": "openfl compatibility update",
 	"contributors": [ "p.j.shand" ],
 	"classPath": "src/"
 }

@@ -23,7 +23,11 @@ class FileCacher {
 	public var onProgress = new Signal1<Float>();
 	public var onError = new Signal();
 
-	public function new(url:String = null) {
+	var alreadyExists:Void->Void;
+
+	public function new(url:String = null, alreadyExists:Void->Void = null) {
+		this.alreadyExists = alreadyExists;
+
 		urlLoader = new URLLoader();
 		ListenerUtil.configureListeners(urlLoader, onSuccess, onFail, onProgressChange);
 		urlLoader.dataFormat = URLLoaderDataFormat.BINARY;
@@ -51,6 +55,9 @@ class FileCacher {
 		this.localFile = new File(localPath);
 
 		if (localFile.exists) {
+			if (alreadyExists != null) {
+				alreadyExists();
+			}
 			onComplete.dispatch();
 			return;
 		}

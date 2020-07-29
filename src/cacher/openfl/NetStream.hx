@@ -42,7 +42,8 @@ class NetStream extends OpenFlNetStream {
 	}
 
 	#if html5
-	override public function play(url:String, ?_, ?_, ?_, ?_, ?_):Void {
+	override public function play(url:#if (openfl_html5 && !openfl_doc_gen) Dynamic #else String #end, p1 = null, p2 = null, p3 = null, p4 = null,
+			p5 = null):Void {
 		if (__video == null)
 			return;
 
